@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div id="welcome-screen" class="screen active">
+            <h1>Interactive Quiz</h1>
+            <p>Test your knowledge with different types of questions!</p>
+            <div class="question-count-selector">
+                <p>How many questions would you like to answer?</p>
+                <div class="count-options">
+                    <button class="count-btn selected" data-count="5">5 Questions</button>
+                    <button class="count-btn" data-count="10">10 Questions</button>
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <i class="fas fa-question-circle"></i>
+                    <span id="question-count">5 Questions</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-clock"></i>
+                    <span>15 Minutes</span>
+                </div>
+            </div>
+            <button id="start-btn" class="btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="progress-container">
+                    <div class="progress-bar"></div>
+                </div>
+                <div class="quiz-info">
+                    <span id="question-number">Question 1/10</span>
+                    <span id="timer">15:00</span>
+                </div>
+            </div>
+
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+                <p id="question-type"></p>
+                <div id="options-container"></div>
+                <div id="text-input-container" class="hidden">
+                    <input type="text" id="fill-blank-input" placeholder="Type your answer here...">
+                </div>
+            </div>
+
+            <div class="quiz-footer">
+                <button id="prev-btn" class="btn secondary">Previous</button>
+                <button id="next-btn" class="btn">Next</button>
+                <button id="submit-btn" class="btn submit hidden">Submit Quiz</button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="screen">
+            <h2>Quiz Results</h2>
+            <div class="results-container">
+                <div class="score-circle">
+                    <div class="score-number">
+                        <span id="score-percentage">0%</span>
+                        <span class="score-text">Score</span>
+                    </div>
+                </div>
+                <div class="score-details">
+                    <div class="detail-item">
+                        <i class="fas fa-check correct"></i>
+                        <span>Correct: <span id="correct-answers">0</span></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-times incorrect"></i>
+                        <span>Incorrect: <span id="incorrect-answers">0</span></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Time Taken: <span id="time-taken">0:00</span></span>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="review-btn" class="btn secondary">Review Answers</button>
+                <button id="restart-btn" class="btn">Restart Quiz</button>
+            </div>
+        </div>
+
+        <!-- Review Screen -->
+        <div id="review-screen" class="screen">
+            <h2>Review Answers</h2>
+            <div id="review-container"></div>
+            <div class="review-navigation">
+                <button id="back-to-results" class="btn secondary">Back to Results</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
